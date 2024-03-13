@@ -1,0 +1,30 @@
+.Navbar {
+    width: 100%;
+    min-height: 15vh;
+    background-image: linear-gradient(to top right, white, skyblue);
+}
+
+.Brand{
+    color: black;
+    font-family: "Raleway";
+}
+
+.NavbarItems {
+    padding-top: 3vh;
+    padding-left: 1em;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.OtherItems ul {
+    list-style: none;
+    display: inline-flex;
+}
+
+
+.OtherItems li {
+    padding: 1em;
+
+}

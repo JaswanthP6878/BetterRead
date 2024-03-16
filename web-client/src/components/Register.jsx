@@ -8,24 +8,53 @@ import {
   Heading,
   Link,
 } from '@chakra-ui/react';
-import { Link as ReactRouterLink } from 'react-router-dom'
-import { Link as ChakraLink} from '@chakra-ui/react'
 
-function Login() {
+function RegisterForm() {
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [userName, setUserName] = useState('')
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle login logic here, e.g., send login credentials to server
     console.log('Email:', email);
     console.log('Password:', password);
+    console.log('firstname:',firstName);
+    console.log('lastname:', lastName);
   };
 
   return (
     <Box maxW="400px" mx="auto" mt="8">
       <Heading textAlign="center" mb="8">Login</Heading>
       <form onSubmit={handleSubmit}>
+        <FormControl id="firstname" mb="4">
+          <FormLabel>First Name</FormLabel>
+          <Input
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            placeholder="Enter Your first name"
+          />
+        </FormControl>
+        <FormControl id="lastname" mb="4">
+          <FormLabel>Last Name</FormLabel>
+          <Input
+            type="text"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            placeholder="Enter your last name"
+          />
+        </FormControl>
+        <FormControl id="username" mb="4">
+          <FormLabel>Username</FormLabel>
+          <Input
+            type="text"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+            placeholder="Enter your username"
+          />
+        </FormControl>
         <FormControl id="email" mb="4">
           <FormLabel>Email address</FormLabel>
           <Input
@@ -45,12 +74,11 @@ function Login() {
           />
         </FormControl>
         <Button type="submit" colorScheme="blue" width="100%">
-          Sign In
+          Register
         </Button>
       </form>
-      <p>New user? <ChakraLink as={ReactRouterLink} to='/register'>Create Account</ChakraLink></p>
     </Box>
   );
 }
 
-export default Login
+export default RegisterForm

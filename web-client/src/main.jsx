@@ -6,12 +6,17 @@ import {
   RouterProvider,
 } from "react-router-dom"
 import Home from "./routes/Home.jsx";
+import Register from './routes/RegisterPage.jsx';
 import "./index.css"
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />
+  },
+  {
+    path: "/register",
+    element: <Register/>
   }
 ])
 
